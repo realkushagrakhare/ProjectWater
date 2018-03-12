@@ -26,8 +26,11 @@ float generateOffset(float x, float z){
 
 vec3 applyDistortion(vec3 vertex){
 	float radiansX = (vertex.x / waveLength + waveTime) * 2.0 * PI;
-	float yDistortion = waveAmplitude * sin(radiansX);
-	return vertex + vec3(0, yDistortion, 0);
+	float xDistortion = generateOffset(vertex.x, vertex.z);
+	float zDistortion = generateOffset(vertex.x, vertex.z);
+	float yDistortion = waveAmplitude * cos(radiansX);
+	yDistortion = generateOffset(vertex.x, vertex.z);
+	return vertex + vec3(xDistortion, yDistortion, zDistortion);
 }
 
 void main(void){
