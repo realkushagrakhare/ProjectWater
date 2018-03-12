@@ -10,7 +10,7 @@ import terrains.TerrainGenerator;
 import water.WaterGenerator;
 import water.WaterTile;
 
-public class LowPolyDemoApp {
+public class LowPolyDemo {
 
 	public static void main(String[] args) {
 		

@@ -9,8 +9,12 @@ import utils.OpenGlUtils;
 import water.WaterTile;
 
 public class WaterRenderer {
+	
+	private static final float WAVE_SPEED = 0.004f;
 
 	private final WaterShader shader;
+	
+	private float time = 0;
 
 	public WaterRenderer() {
 		this.shader = new WaterShader();
@@ -52,6 +56,7 @@ public class WaterRenderer {
 	
 	private void prepareShader(WaterTile water, ICamera camera, Light light){
 		shader.start();
+		updateTime();
 		loadCameraVariables(camera);
 		shader.height.loadFloat(water.getHeight());
 	}
@@ -60,6 +65,11 @@ public class WaterRenderer {
 		shader.projectionViewMatrix.loadMatrix(camera.getProjectionViewMatrix());
 		shader.cameraPos.loadVec3(camera.getPosition());
 		shader.nearFarPlanes.loadVec2(camera.getNearPlane(), camera.getFarPlane());
+	}
+	
+	private void updateTime(){
+		time += WAVE_SPEED;
+		shader.waveTime.loadFloat(time);
 	}
 
 
