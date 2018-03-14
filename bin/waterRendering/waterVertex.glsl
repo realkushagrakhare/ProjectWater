@@ -8,6 +8,7 @@ const float waveAmplitude = 1.0;
 layout(location = 0) in vec2 in_position;
 layout(location = 1) in vec4 in_indicators;
 
+out vec4 pass_clipSpaceGrid;
 out vec4 pass_clipSpaceReal;
 out vec3 pass_normal;
 out vec3 pass_toCameraVector;
@@ -25,17 +26,17 @@ float generateOffset(float x, float z){
 }
 
 vec3 applyDistortion(vec3 vertex){
-	float radiansX = (vertex.x / waveLength + waveTime) * 2.0 * PI;
 	float xDistortion = generateOffset(vertex.x, vertex.z);
+	float yDistortion = generateOffset(vertex.x, vertex.z);
 	float zDistortion = generateOffset(vertex.x, vertex.z);
-	float yDistortion = waveAmplitude * cos(radiansX);
-	yDistortion = generateOffset(vertex.x, vertex.z);
 	return vertex + vec3(xDistortion, yDistortion, zDistortion);
 }
 
 void main(void){
 	
 	vec3 currentVertex = vec3(in_position.x, height, in_position.y);
+	
+	pass_clipSpaceGrid = projectionViewMatrix * vec4(currentVertex, 1.0);
 	
 	currentVertex = applyDistortion(currentVertex);
 	

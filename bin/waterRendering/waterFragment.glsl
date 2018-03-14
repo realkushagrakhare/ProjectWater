@@ -9,6 +9,7 @@ const float murkyDepth = 15;
 
 out vec4 out_colour;
 
+in vec4 pass_clipSpaceGrid;
 in vec4 pass_clipSpaceReal;
 in vec3 pass_normal;
 in vec3 pass_toCameraVector;
@@ -49,15 +50,16 @@ float calculateFresnel(){
 vec2 clipSpaceToTexCoords(vec4 clipSpace){
 	vec2 ndc = (clipSpace.xy / clipSpace.w);
 	vec2 texCoords = ndc / 2.0 + 0.5;
-	return texCoords;
+	return clamp(texCoords, 0.002, 0.998);
 }
 
 void main(void){
 
 	vec2 texCoordsReal = clipSpaceToTexCoords(pass_clipSpaceReal);
+	vec2 texCoordsGrid = clipSpaceToTexCoords(pass_clipSpaceGrid);
 	
-	vec2 refractionTexCoords = texCoordsReal;
-	vec2 reflectionTexCoords = vec2(texCoordsReal.x, 1.0 - texCoordsReal.y);
+	vec2 refractionTexCoords = texCoordsGrid;
+	vec2 reflectionTexCoords = vec2(texCoordsGrid.x, 1.0 - texCoordsGrid.y);
 	float waterDepth = calculateWaterDepth(texCoordsReal);
 	
 	vec3 refractColour = texture(refractionTexture, refractionTexCoords).rgb;
