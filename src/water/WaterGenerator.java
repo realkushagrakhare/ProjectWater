@@ -41,12 +41,11 @@ public class WaterGenerator {
 
 	private static void storeTriangle(Vector2f[] cornerPos, ByteBuffer buffer, boolean left) {
 		int index0 = left ? 0 : 2;
-		byte[] indicators = {0,0,0,0};
-		DataStoring.packVertexData(cornerPos[index0], indicators, buffer);
 		int index1 = 1;
-		DataStoring.packVertexData(cornerPos[index1], indicators, buffer);
 		int index2 = left ? 2 : 3;
-		DataStoring.packVertexData(cornerPos[index2], indicators, buffer);
+		DataStoring.packVertexData(cornerPos[index0], getIndicators(index0, cornerPos, index1, index2), buffer);
+		DataStoring.packVertexData(cornerPos[index1], getIndicators(index1, cornerPos, index2, index0), buffer);
+		DataStoring.packVertexData(cornerPos[index2], getIndicators(index2, cornerPos, index0, index1), buffer);
 	}
 
 	private static Vector2f[] calculateCornerPositions(int col, int row) {
@@ -58,5 +57,13 @@ public class WaterGenerator {
 		return vertices;
 	}
 
+	private static byte[] getIndicators(int currentVertex, Vector2f[] vertexPositions, int vertex1, int vertex2) {
+		Vector2f currentVertexPos = vertexPositions[currentVertex];
+		Vector2f vertex1Pos = vertexPositions[vertex1];
+		Vector2f vertex2Pos = vertexPositions[vertex2];
+		Vector2f offset1 = Vector2f.sub(vertex1Pos, currentVertexPos, null);
+		Vector2f offset2 = Vector2f.sub(vertex2Pos, currentVertexPos, null);
+		return new byte[]{(byte) offset1.x, (byte) offset1.y, (byte) offset2.x, (byte) offset2.y};
+	}
 
 }

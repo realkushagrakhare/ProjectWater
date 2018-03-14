@@ -72,5 +72,6 @@ void main(void){
 	
 	out_colour = vec4(finalColour, 1.0);
 	out_colour.a = clamp(waterDepth / edgeSoftness, 0.0, 1.0);
+	//out_colour = vec4(pass_normal.x, pass_normal.y, pass_normal.z, 1);
 
 }

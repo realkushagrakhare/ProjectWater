@@ -19,6 +19,12 @@ uniform float waveTime;
 
 uniform mat4 projectionViewMatrix;
 
+vec3 calcNormal(vec3 vertex0, vec3 vertex1, vec3 vertex2){
+	vec3 tangent = vertex1 - vertex0;
+	vec3 bitangent = vertex2 - vertex0;
+	return normalize(cross(tangent, bitangent));
+}
+
 float generateOffset(float x, float z){
 	float radiansX = (x / waveLength + waveTime) * 2.0 * PI;
 	float radiansZ = (z / waveLength + waveTime) * 2.0 * PI;
@@ -26,8 +32,8 @@ float generateOffset(float x, float z){
 }
 
 vec3 applyDistortion(vec3 vertex){
-	float xDistortion = generateOffset(vertex.x, vertex.z);
 	float yDistortion = generateOffset(vertex.x, vertex.z);
+	float xDistortion = generateOffset(vertex.x, vertex.z);
 	float zDistortion = generateOffset(vertex.x, vertex.z);
 	return vertex + vec3(xDistortion, yDistortion, zDistortion);
 }
@@ -35,12 +41,16 @@ vec3 applyDistortion(vec3 vertex){
 void main(void){
 	
 	vec3 currentVertex = vec3(in_position.x, height, in_position.y);
+	vec3 vertex1 = currentVertex + vec3(in_indicators.x, 0.0, in_indicators.y);
+	vec3 vertex2 = currentVertex + vec3(in_indicators.z, 0.0, in_indicators.w);
 	
 	pass_clipSpaceGrid = projectionViewMatrix * vec4(currentVertex, 1.0);
 	
 	currentVertex = applyDistortion(currentVertex);
+	vertex1 = applyDistortion(vertex1);
+	vertex2 = applyDistortion(vertex2);
 	
-	pass_normal = vec3(0.0, 1.0, 0.0);
+	pass_normal = calcNormal(currentVertex, vertex1, vertex2);
 	
 	pass_clipSpaceReal = projectionViewMatrix * vec4(currentVertex, 1.0);
 	gl_Position = pass_clipSpaceReal;
