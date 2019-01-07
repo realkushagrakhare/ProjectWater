@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="sfml-window_init">
+  <PropertyGroup Label="Debug and static and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Release and static and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-sfml-window Condition="'$(Linkage-sfml-window)' == ''">dynamic</Linkage-sfml-window>
+    <CallingConvention-sfml-window Condition="'$(CallingConvention-sfml-window)' == ''">cdecl</CallingConvention-sfml-window>
+  </PropertyGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\sfml-window-propertiesui-54ff1a4a-80fd-4631-ab43-c48896c58517.xml" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>HAS_SFML;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="static" Condition="'$(Linkage-sfml-window.ToLower())' == 'static'">
+    <ClCompile>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v110 and Debug and static" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v110\Debug\static\sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v110 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v110\Debug\dynamic\sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v110 and Release and static" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v110\Release\static\sfml-window-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v110 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v110\Release\dynamic\sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v120 and Debug and static" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v120\Debug\static\sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v120 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v120\Debug\dynamic\sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v120 and Release and static" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v120\Release\static\sfml-window-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v120 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v120\Release\dynamic\sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v140 and Debug and static" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v140\Debug\static\sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v140 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v140\Debug\dynamic\sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v140 and Release and static" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v140\Release\static\sfml-window-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v140 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v140\Release\dynamic\sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v110 and Debug and static" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v110\Debug\static\sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v110 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v110\Debug\dynamic\sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v110 and Release and static" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v110\Release\static\sfml-window-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v110 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v110\Release\dynamic\sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v120 and Debug and static" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v120\Debug\static\sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v120 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v120\Debug\dynamic\sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v120 and Release and static" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v120\Release\static\sfml-window-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v120 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v120\Release\dynamic\sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v140 and Debug and static" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\static\sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v140 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\dynamic\sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v140 and Release and static" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'static'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\static\sfml-window-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v140 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\dynamic\sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <UsingTask TaskName="sfml-window_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="sfml-window_init">
+    <sfml-window_Contains Text="Linkage-dynamic" Library="sfml-window" Value="dynamic" Condition="'$(Linkage-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sfml-window" />
+    </sfml-window_Contains>
+    <sfml-window_Contains Text="Linkage-static" Library="sfml-window" Value="static" Condition="'$(Linkage-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sfml-window" />
+    </sfml-window_Contains>
+    <sfml-window_Contains Text="Linkage-ltcg" Library="sfml-window" Value="ltcg" Condition="'$(Linkage-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sfml-window" />
+    </sfml-window_Contains>
+    <sfml-window_Contains Text="Linkage-sxs" Library="sfml-window" Value="sxs" Condition="'$(Linkage-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sfml-window" />
+    </sfml-window_Contains>
+    <sfml-window_Contains Text="CallingConvention-cdecl" Library="sfml-window" Value="cdecl" Condition="'$(CallingConvention-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window" />
+    </sfml-window_Contains>
+    <sfml-window_Contains Text="CallingConvention-stdcall" Library="sfml-window" Value="stdcall" Condition="'$(CallingConvention-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window" />
+    </sfml-window_Contains>
+    <sfml-window_Contains Text="CallingConvention-fastcall" Library="sfml-window" Value="fastcall" Condition="'$(CallingConvention-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window" />
+    </sfml-window_Contains>
+    <sfml-window_Contains Text="CallingConvention-thiscall" Library="sfml-window" Value="thiscall" Condition="'$(CallingConvention-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window" />
+    </sfml-window_Contains>
+    <sfml-window_Contains Text="CallingConvention-clrcall" Library="sfml-window" Value="clrcall" Condition="'$(CallingConvention-sfml-window)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window" />
+    </sfml-window_Contains>
+  </Target>
+</Project>

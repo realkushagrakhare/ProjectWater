@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="sfml-window_redist_init;sfml-window_redist_init_2">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-sfml-window_redist Condition="'$(Linkage-sfml-window_redist)' == ''">dynamic</Linkage-sfml-window_redist>
+    <CallingConvention-sfml-window_redist Condition="'$(CallingConvention-sfml-window_redist)' == ''">cdecl</CallingConvention-sfml-window_redist>
+  </PropertyGroup>
+  <Target Name="sfml-window_redist_init">
+    <sfml-window_redist_Contains Text="Linkage-dynamic" Library="sfml-window_redist" Value="dynamic" Condition="'$(Linkage-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+    <sfml-window_redist_Contains Text="Linkage-static" Library="sfml-window_redist" Value="static" Condition="'$(Linkage-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+    <sfml-window_redist_Contains Text="Linkage-ltcg" Library="sfml-window_redist" Value="ltcg" Condition="'$(Linkage-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+    <sfml-window_redist_Contains Text="Linkage-sxs" Library="sfml-window_redist" Value="sxs" Condition="'$(Linkage-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+    <sfml-window_redist_Contains Text="CallingConvention-cdecl" Library="sfml-window_redist" Value="cdecl" Condition="'$(CallingConvention-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+    <sfml-window_redist_Contains Text="CallingConvention-stdcall" Library="sfml-window_redist" Value="stdcall" Condition="'$(CallingConvention-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+    <sfml-window_redist_Contains Text="CallingConvention-fastcall" Library="sfml-window_redist" Value="fastcall" Condition="'$(CallingConvention-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+    <sfml-window_redist_Contains Text="CallingConvention-thiscall" Library="sfml-window_redist" Value="thiscall" Condition="'$(CallingConvention-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+    <sfml-window_redist_Contains Text="CallingConvention-clrcall" Library="sfml-window_redist" Value="clrcall" Condition="'$(CallingConvention-sfml-window_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sfml-window_redist" />
+    </sfml-window_redist_Contains>
+  </Target>
+  <Target Name="sfml-window_redist_init_2">
+    <SetEnv Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v110\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v110\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v120\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v120\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v140\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v140\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v110\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v110\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v120\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v120\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v140\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v140\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+  </Target>
+  <ItemGroup Label="Win32 and v110 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v110\Debug\dynamic\sfml-window-d-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="Win32 and v110 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v110\Release\dynamic\sfml-window-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="Win32 and v120 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v120\Debug\dynamic\sfml-window-d-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="Win32 and v120 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v120\Release\dynamic\sfml-window-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="Win32 and v140 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v140\Debug\dynamic\sfml-window-d-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="Win32 and v140 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v140\Release\dynamic\sfml-window-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="x64 and v110 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v110\Debug\dynamic\sfml-window-d-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="x64 and v110 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v110\Release\dynamic\sfml-window-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="x64 and v120 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v120\Debug\dynamic\sfml-window-d-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="x64 and v120 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v120\Release\dynamic\sfml-window-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="x64 and v140 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v140\Debug\dynamic\sfml-window-d-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="x64 and v140 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v140\Release\dynamic\sfml-window-2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <Target Name="sfml-window_redist_AfterBuild" AfterTargets="AfterBuild" />
+  <Target Name="sfml-window_redist_AfterBuild_Win32_and_v110_and_Debug_and_dynamic" Label="Win32 and v110 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v110\Debug\dynamic\sfml-window-d-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_Win32_and_v110_and_Release_and_dynamic" Label="Win32 and v110 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v110\Release\dynamic\sfml-window-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_Win32_and_v120_and_Debug_and_dynamic" Label="Win32 and v120 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v120\Debug\dynamic\sfml-window-d-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_Win32_and_v120_and_Release_and_dynamic" Label="Win32 and v120 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v120\Release\dynamic\sfml-window-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_Win32_and_v140_and_Debug_and_dynamic" Label="Win32 and v140 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v140\Debug\dynamic\sfml-window-d-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_Win32_and_v140_and_Release_and_dynamic" Label="Win32 and v140 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/Win32\v140\Release\dynamic\sfml-window-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_x64_and_v110_and_Debug_and_dynamic" Label="x64 and v110 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v110\Debug\dynamic\sfml-window-d-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_x64_and_v110_and_Release_and_dynamic" Label="x64 and v110 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v110' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v110\Release\dynamic\sfml-window-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_x64_and_v120_and_Debug_and_dynamic" Label="x64 and v120 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v120\Debug\dynamic\sfml-window-d-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_x64_and_v120_and_Release_and_dynamic" Label="x64 and v120 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v120\Release\dynamic\sfml-window-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_x64_and_v140_and_Debug_and_dynamic" Label="x64 and v140 and Debug and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v140\Debug\dynamic\sfml-window-d-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="sfml-window_redist_AfterBuild_x64_and_v140_and_Release_and_dynamic" Label="x64 and v140 and Release and dynamic" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-sfml-window_redist.ToLower())' == 'dynamic'" AfterTargets="sfml-window_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\v140\Release\dynamic\sfml-window-2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <UsingTask TaskName="sfml-window_redist_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+</Project>
